@@ -8,8 +8,6 @@ def mixer(array, groupsize)
   num_groups.times do
     finished_groups << shuffled_array.shift(groupsize)
   end
-
-  finished_groups << shuffled_array
+  finished_groups[-1] = finished_groups.last + shuffled_array
+  finished_groups
 end
-
-# Returns 2D array of groups
